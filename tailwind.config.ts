@@ -12,8 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage: {
+        'purple-to-transparent': 'linear-gradient(to right, #6d28d9, transparent)',
+      },
     },
   },
   plugins: [],
 };
+
 export default config;

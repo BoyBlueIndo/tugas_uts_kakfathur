@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous" />
+
+    <!-- Please DO NOT remove this line, all link and script tags will be merged to here -->
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+      *,
+      *::before,
+      *::after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      hr,
+      p,
+      figure {
+        display: block;
+        font-size: 1em;
+        font-weight: normal;
+        margin: 0;
+        border-width: 0;
+        opacity: 1;
+      }
+
+      ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        display: block;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        display: block;
+        padding: 0;
+        margin: 0;
+        align-items: normal;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+          'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+          'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+          monospace;
+      }
+
+      .flex-column {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .page-header {
+        z-index: 10000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .sticking {
+        margin: 0 !important;
+        z-index: 10000 !important;
+      }
+
+      @media (max-width: 99999px) {
+        .max\:show {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .xxxl\:show {
+          display: none;
+        }
+
+        .xxl\:show {
+          display: none;
+        }
+
+        .xl\:show {
+          display: none;
+        }
+
+        .lg\:show {
+          display: none;
+        }
+
+        .md\:show {
+          display: none;
+        }
+
+        .sm\:show {
+          display: none;
+        }
+
+        .xs\:show {
+          display: none;
+        }
+
+        .xxs\:show {
+          display: none;
+        }
+
+        .tn\:show {
+          display: none;
+        }
+
+        .max\:hide {
+          display: none;
+        }
+      }
+
+      @media (max-width: 2999px) {
+        .xxxl\:show {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .xxxl\:hide {
+          display: none;
+        }
+      }
+
+      @media (max-width: 1919px) {
+        .xxl\:show {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .xxl\:hide {
+          display: none;
+        }
+      }
+
+      @media (max-width: 1399px) {
+        .xl\:show {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .xl\:hide {
+          display: none;
+        }
+      }
+
+      @media (max-width: 1199px) {
+        .lg\:show {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .lg\:hide {
+          display: none;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .md\:show {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .md\:hide {
+          display: none;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .sm\:show {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .sm\:hide {
+          display: none;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .xs\:show {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .xs\:hide {
+          display: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .xxs\:show {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .xxs\:hide {
+          display: none;
+        }
+      }
+
+      @media (max-width: 384px) {
+        .tn\:show {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .tn\:hide {
+          display: none;
+        }
+      }
+
+      .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+      }
+      @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      @font-face {
+        font-family: 'FontAwesome';
+        font-weight: normal;
+        font-style: normal;
+        src: url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0');
+        src: url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0')
+            format('embedded-opentype'),
+          url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0')
+            format('woff2'),
+          url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0')
+            format('woff'),
+          url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0')
+            format('truetype'),
+          url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular')
+            format('svg');
+      }
+      @use 'utils' as *;
+      @use 'global' as *;
+
+      .untitled-page {
+        &.root {
+          position: relative;
+          width: 1440px;
+          height: 800px;
+          min-height: 800px;
+          background: var(--src) center center / 100% 100% no-repeat;
+          background-color: rgb(255 255 255);
+          overflow: hidden;
+        }
+
+        .hero_title_box {
+          position: absolute;
+          inset: 39.5px auto auto 140px;
+          display: flex;
+          align-items: center;
+          width: 137px;
+          height: 53px;
+        }
+
+        .hero_title {
+          font: 600 50px/1 'Lexend Deca', Helvetica, Arial, serif;
+          color: rgb(0 0 0);
+          letter-spacing: -1px;
+        }
+
+        .hero_title_span0 {
+          font: 600 1em/1 'Lexend Deca', Helvetica, Arial, serif;
+          color: rgb(245 245 245);
+        }
+
+        .hero_title_span1 {
+          font: 600 1.04em/1 'Lexend Deca', Helvetica, Arial, serif;
+          color: rgb(84 104 231);
+          letter-spacing: -1.04px;
+        }
+
+        .highlight {
+          position: absolute;
+          inset: 54px auto auto 677px;
+          width: 62px;
+          height: 24px;
+          font: 500 16px/1.5 'Lexend Deca', Helvetica, Arial, serif;
+          color: rgb(245 245 245);
+          text-decoration: underline;
+          text-shadow: 0 8px 16px rgb(35 35 64 / 60%);
+        }
+
+        .highlight1 {
+          position: absolute;
+          inset: 54px auto auto 795px;
+          width: 36px;
+          height: 24px;
+          font: 500 16px/1.5 'Lexend Deca', Helvetica, Arial, serif;
+          color: rgb(245 245 245);
+          text-decoration: underline;
+          text-shadow: 0 8px 16px rgb(35 35 64 / 60%);
+        }
+
+        .highlight2 {
+          position: absolute;
+          inset: 54px auto auto 887px;
+          width: 64px;
+          height: 24px;
+          font: 500 16px/1.5 'Lexend Deca', Helvetica, Arial, serif;
+          color: rgb(245 245 245);
+          text-decoration: underline;
+          text-shadow: 0 8px 16px rgb(35 35 64 / 60%);
+        }
+
+        .highlight3 {
+          position: absolute;
+          inset: 54px auto auto 1007px;
+          width: 53px;
+          height: 24px;
+          font: 500 16px/1.5 'Lexend Deca', Helvetica, Arial, serif;
+          color: rgb(245 245 245);
+          text-decoration: underline;
+          text-shadow: 0 8px 16px rgb(35 35 64 / 60%);
+        }
+
+        .color {
+          position: absolute;
+          inset: 43px 140px 710px 1116px;
+          width: 184px;
+          height: 47px;
+          background-color: rgb(84 104 231 / 49.8%);
+          border-radius: 4px;
+        }
+
+        .highlight11 {
+          position: absolute;
+          inset: 53px auto auto 1160px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 96px;
+          height: 27px;
+          font: 400 18px/1.5 'Lexend Deca', Helvetica, Arial, serif;
+          color: rgb(245 245 245);
+          text-align: center;
+        }
+
+        .hero_title1 {
+          position: absolute;
+          inset: 252px auto auto 140px;
+          width: 563px;
+          height: 128px;
+          font: 700 50px/1.28 'Lexend Deca', Helvetica, Arial, serif;
+          color: rgb(245 245 245);
+        }
+
+        .highlight12 {
+          position: absolute;
+          inset: 396px auto auto 140px;
+          width: 397px;
+          height: 54px;
+          font: 400 18px/1.5 'Lexend Deca', Helvetica, Arial, serif;
+          color: rgb(245 245 245);
+        }
+
+        .color1 {
+          position: absolute;
+          inset: 506px 1002px 247px 140px;
+          width: 298px;
+          height: 47px;
+          background-color: rgb(245 245 245);
+          border-radius: 4px;
+          outline: 2px solid rgb(209 236 253);
+          outline-offset: -2px;
+        }
+
+        .text {
+          position: absolute;
+          inset: 518px auto auto 156px;
+          display: flex;
+          align-items: center;
+          width: 39px;
+          height: 23px;
+          font: 400 14px/1.6 'Lexend Deca', Helvetica, Arial, serif;
+          color: rgb(118 118 178);
+          letter-spacing: 0.14px;
+        }
+
+        .image1 {
+          position: absolute;
+          inset: 518px 1018px 258px 398px;
+          width: 24px;
+          height: 24px;
+        }
+
+        .color2 {
+          position: absolute;
+          inset: 506px 753px 247px 454px;
+          width: 233px;
+          height: 47px;
+          background-color: rgb(84 104 231);
+          border-radius: 4px;
+        }
+
+        .highlight13 {
+          position: absolute;
+          inset: 516px auto auto 498px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 145px;
+          height: 27px;
+          font: 400 18px/1.5 'Lexend Deca', Helvetica, Arial, serif;
+          color: rgb(245 245 245);
+          text-align: center;
+        }
+      }
+      .headroom {
+        z-index: 10000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        will-change: transform;
+        transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+        transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+        transform: translateY(-100%);
+      }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="/css/UntitledPage.css" />
+  </head>
+
+  <body class="flex-column">
+    <div
+      class="untitled-page root"
+      style="--src: url(/assets/e4d4c51ee89ada895854e950c05cbde6.png)">
+      <h1 class="hero_title_box">
+        <span class="hero_title">
+          <span class="hero_title_span0">team</span>
+          <span class="hero_title_span1">.</span>
+        </span>
+      </h1>
+      <p class="highlight">Product</p>
+      <p class="highlight1">Blog</p>
+      <p class="highlight2">Support</p>
+      <p class="highlight3">Log In</p>
+      <div class="color"></div>
+      <p class="highlight11">Get Access</p>
+      <h1 class="hero_title1">Instant collaboration for remote teams</h1>
+      <p class="highlight12">
+        All-in-one place for your remote team to chat, collaborate and track
+        project progress.
+      </p>
+      <div class="color1"></div>
+      <div class="text">Email</div>
+      <img
+        class="image1"
+        src="/assets/4300c14c95fe92b42ba29ca5d7a36065.svg"
+        alt="alt text" />
+      <div class="color2"></div>
+      <p class="highlight13">Get Early Access</p>
+    </div>
+  </body>
+</html>
